@@ -23,26 +23,9 @@ This repository contains a structural, end-to-end computational pipeline designe
 * Clean segregation of up-regulated and down-regulated gene targets compiled into structured data frames.
 * Functional interactome networks identifying high-degree hub proteins involved in pulmonary inflammation pathways.
 
-*📈 [Optional: Upload a JPEG/PNG image of a Volcano Plot, Bar Chart, or your Cytoscape Network directly into your repository and embed it here!]* 
 
-### 🚀 How to Run the Pipeline
 
-1. Clone the repository: 
 
-bash
-
-git clone https://github.com/ArnabBiotech2001/RNAseq-Transcriptomics-Workflow.git
-
-Use code with caution.
-2. Open the .ipynb file in Google Colab or your local Jupyter environment.
-3. Install necessary dependencies: 
-
-bash
-
-pip install pandas numpy biopython matplotlib seaborn
-
-Use code with caution.
-4. Run the code blocks sequentially to execute data sorting and automated plotting.
 
 **Author:** Arnab Koley
 **Contact:** arnabkoley18@gmail.com | [LinkedIn](https://linkedin.com/in/arnab-koley-150b68237)
