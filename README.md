@@ -1,31 +1,37 @@
-### Automated RNA-Seq Quality Control & Differential Expression Workflow
+# Integrated Bioinformatics and Machine Learning Pipeline for Lung Disease Biomarker Identification
 
-### 📌 Project Overview
+## 📌 Project Overview
+This repository contains a comprehensive computational bioinformatics and machine learning pipeline developed as part of the Biotecnika Bioinformatics, AI & Machine Learning Summer Internship Program (Supervised by Dr. Nilofer Shaikh)[cite: 2]. 
 
-This repository contains a structural, end-to-end computational pipeline designed to preprocess, analyze, and visualize public RNA-seq datasets from the **Gene Expression Omnibus (GEO)**. The workflow specifically profiles transcriptomic data across multi-sample clinical cohorts, including **pneumonia, COPD, and COVID-19**, to isolate significant differential gene expressions (DEGs) and map biological interactomes. 
+The project investigates the shared molecular signatures, potential biomarkers, and overlapping pathways between **COVID-19**, **Chronic Obstructive Pulmonary Disease (COPD)**, and **Pneumonia** using publicly available transcriptomics datasets from the NCBI-GEO database[cite: 2].
 
-### 🛠️ Tech Stack & Tools
+---
 
-* **Programming:** Python 3.x (Pandas, NumPy, BioPython, Matplotlib, Seaborn)
-* **Frameworks & Core Tools:** FastQC, GEO2R (limma framework), Google Colab
-* **Network Biology:** STRING Database, Cytoscape (v3.x)
-* **Version Control:** Git
+## 🗂️ Dataset Collection (NCBI-GEO)
+Microarray and RNA-seq gene expression datasets were retrieved and processed:
+* **COVID-19:** GSE212865, GSE164805, GSE177477[cite: 2]
+* **COPD:** GSE103174, GSE76925[cite: 2]
+* **Pneumonia:** GSE48080, GSE133975, GSE47962[cite: 2]
 
-### ⚙️ Workflow Architecture
+---
 
-1. **Data Retrieval & Preprocessing:** Automated parsing of large-scale genomic data tables and CSV outputs from public GEO cohorts using Python .
-2. **Quality Control (QC):** Execution of per-base sequence quality scoring and adapter contamination assessments via FastQC across multi-sample patient matrices.
-3. **Differential Expression Analysis:** Utilizing the limma linear modeling framework via GEO2R to statistically determine significantly up-regulated and down-regulated biomarkers.
-4. **Network Interactome Modeling:** Exporting statistically filtered DEGs into the STRING database to build confidence-view protein-protein interaction (PPI) networks, followed by topological visualization in Cytoscape.
+## ⚙️ Methodology & Workflow
+1. **Differential Gene Expression (DEG) Analysis:** Executed in Python using strict statistical thresholds (Adjusted P-value < 0.05, Absolute logFC $\ge$ 1)[cite: 2].
+2. **Machine Learning Regression Modeling:** Evaluated multiple regression algorithms to predict gene expression patterns and prioritize key features[cite: 2]:
+   * **XGBoost Regressor:** $R^2 = 0.8242$[cite: 2]
+   * **Random Forest Regressor:** $R^2 = 0.8213$[cite: 2]
+   * **Gradient Boosting Regressor:** $R^2 = 0.7811$[cite: 2]
+3. **Protein-Protein Interaction (PPI) Network:** Constructed using the STRING database and visualized/analyzed in Cytoscape utilizing Cytohubba (MCC algorithm) to identify hub genes[cite: 2].
+4. **Functional Enrichment Analysis:** Performed Gene Ontology (GO), KEGG, and Reactome pathway analyses to uncover biological mechanisms[cite: 2].
 
-### 📊 Key Results & Visualizations
+---
 
-* Clean segregation of up-regulated and down-regulated gene targets compiled into structured data frames.
-* Functional interactome networks identifying high-degree hub proteins involved in pulmonary inflammation pathways.
+## 🧬 Key Findings & Potential Biomarkers
+* **Chemokines & Receptors:** `CXCL10`, `CXCL11`, `CXCL9`, `CXCL2`[cite: 2]
+* **Antiviral & Interferon-stimulated Genes:** `RSAD2`, `OASL`, `IFIT1`, `IFI44L`, `MX2`, `HERC5`[cite: 2]
+* **Immune Regulation:** `ISG15`, `APOBEC3A`, `CD83`[cite: 2]
 
+---
 
-
-
-
-**Author:** Arnab Koley
-**Contact:** arnabkoley18@gmail.com | [LinkedIn](https://linkedin.com/in/arnab-koley-150b68237)
+## 📄 Project Report
+* [View Final Project Report Document](./FINAL%20PROJECT%20\(ARNAB\%20KOLEY\).docx)[cite: 2, 5]
